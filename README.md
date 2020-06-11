@@ -1,13 +1,13 @@
-# Login Interface
+# Login & Sign up Interface
 
-To be added
+A dynamic Login / Sign up interface
 
 ## Live Link:
-To be added
+https://login-interface.herokuapp.com/
 
 ## Tech Stack:
 - React
-- React Tooltip
+- React-Icons
 
 ## Contributors:
 Guillaume Acho
@@ -15,8 +15,10 @@ Guillaume Acho
 Reach out if you would like to contribute to this project
 
 ## Future ideas:
-- Improve
-- Ability 
+- Add Remember option
+- Connect to a Database
+- Ability to secure Password Reset via Email
+- Ability to know if an user has already been registered
 
 #
 #
