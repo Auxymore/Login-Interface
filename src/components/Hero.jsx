@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import {AiOutlineUser} from "react-icons/ai"
 import {RiLockPasswordLine} from "react-icons/ri"
+import {AiOutlineEye} from "react-icons/ai"
 
 function Hero (){
 
     const [isRegister, setRegister] = useState(true)
     const [name, setName] = useState("");
     const [submit, setSubmit] = useState("");
+    const [isPasswordHide, setPasswordHide] = useState(true)
 
     function register(e){
         setRegister(!isRegister);
@@ -22,6 +24,10 @@ function Hero (){
         console.log("I got clicked");
         setSubmit(event)
     }
+    function showPassword(){
+        setPasswordHide(!isPasswordHide);
+        console.log("I got Clicked")
+    }
 
     return (
         <div className="container">
@@ -31,25 +37,29 @@ function Hero (){
                <h1>{isRegister ? "Login Here" : "Register Here"}</h1>
                <hr/>
                <form action="/">
-                  <h2>{isRegister ? "Welcome back" : "Welcome"} {name} </h2>
+                  <h2>{isRegister ? `Welcome back ${name}`: "Welcome"} </h2>
                   <p>{submit ?"please wait a minute": ""}</p>
                   <div className="username-input">  
-                    <div className="icon">
+                    <div className="user-icon">
                        <AiOutlineUser />
                     </div>             
                      <input onChange={handleChange} placeholder={isRegister ? "Username" : "Email"}></input>   
                   </div>
                   <div className="password-input">
-                    <div className="icon">
+                    <div className="lock-icon">
                        <RiLockPasswordLine />
                     </div>
-                    <input placeholder="Password"></input>
+                    <input type={isPasswordHide ? "password" : "text"} placeholder="Password"></input>
+                    <div className="show-password-icon">
+                       <AiOutlineEye onClick={showPassword}/>
+                    </div>
+                    
                   </div>
                   {isRegister ? "" :<div className="password-input">
-                    <div className="icon">
+                    <div className="lock-icon">
                        <RiLockPasswordLine />
                     </div>
-                    <input placeholder="Confirm Password"></input>
+                    <input type="password" placeholder="Confirm Password"></input>
                   </div>}
                   <button onClick={handleClick}>{isRegister ? "Login" : "Register"}</button> 
                   
