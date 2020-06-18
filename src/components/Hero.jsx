@@ -32,12 +32,11 @@ function Hero (){
     return (
         <div className="container">
            <div className="user">
-
              <div className="user-info">
                <h1>{isRegister ? "Login Here" : "Register Here"}</h1>
                <hr/>
                <form action="/">
-                  <h2>{isRegister ? `Welcome back ${name}`: "Welcome"} </h2>
+                  <h2>{isRegister ? "Welcome back": "Welcome"}</h2>
                   <p>{submit ?"please wait a minute": ""}</p>
                   <div className="username-input">  
                     <div className="user-icon">
@@ -64,11 +63,14 @@ function Hero (){
                   <button onClick={handleClick}>{isRegister ? "Login" : "Register"}</button> 
                   
                   {isRegister ? <div className="login-options">
+                  
                   <a href="#" className="new-account">Forgot your password?</a>
+                 
                   <a href="#" onClick={register} className="new-account">New? Create a new account</a>
                   </div>
                    :
                    <div className="login-options">
+                   
                   <a href="#" onClick={register} className="new-account">Already have an account? Login</a>
                   </div>}
                   
